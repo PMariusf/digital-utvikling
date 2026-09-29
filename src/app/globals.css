@@ -397,3 +397,12 @@ a {
     animation-iteration-count: 1 !important;
   }
 }
+
+
+.brand-logo {
+  position: relative;
+  display: block;
+  width: 11.25rem;
+  height: 3rem;
+  flex-shrink: 0;
+}
