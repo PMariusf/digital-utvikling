@@ -211,32 +211,39 @@ function ThemeIcon({ theme }: { theme: Theme }) {
 export default function Home() {
   const [language, setLanguage] = useState<Language>("no");
   const [theme, setTheme] = useState<Theme>("dark");
+  const [preferencesReady, setPreferencesReady] = useState(false);
   const copy = translations[language];
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("varegg-theme") as Theme | null;
     const savedLanguage = window.localStorage.getItem("varegg-language") as Language | null;
+    const resolvedTheme: Theme =
+      savedTheme === "dark" || savedTheme === "light"
+        ? savedTheme
+        : window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "dark";
+    const resolvedLanguage: Language =
+      savedLanguage === "no" || savedLanguage === "en" ? savedLanguage : "no";
 
-    if (savedTheme === "dark" || savedTheme === "light") {
-      setTheme(savedTheme);
-    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-      setTheme("light");
-    }
-
-    if (savedLanguage === "no" || savedLanguage === "en") {
-      setLanguage(savedLanguage);
-    }
+    setTheme(resolvedTheme);
+    setLanguage(resolvedLanguage);
+    document.documentElement.dataset.theme = resolvedTheme;
+    document.documentElement.lang = resolvedLanguage === "no" ? "nb" : "en";
+    setPreferencesReady(true);
   }, []);
 
   useEffect(() => {
+    if (!preferencesReady) return;
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem("varegg-theme", theme);
-  }, [theme]);
+  }, [theme, preferencesReady]);
 
   useEffect(() => {
+    if (!preferencesReady) return;
     document.documentElement.lang = language === "no" ? "nb" : "en";
     window.localStorage.setItem("varegg-language", language);
-  }, [language]);
+  }, [language, preferencesReady]);
 
   return (
     <>
@@ -290,6 +297,10 @@ export default function Home() {
             >
               <ThemeIcon theme={theme} />
             </button>
+
+            <a className="button button-small mobile-contact" href="#kontakt">
+              {copy.nav.contact}
+            </a>
           </div>
         </div>
       </header>
