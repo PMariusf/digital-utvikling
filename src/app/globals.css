@@ -190,6 +190,10 @@ a {
   stroke-width: 1.8;
 }
 
+.mobile-contact {
+  display: none;
+}
+
 .nav-link {
   position: relative;
   transition: color 180ms ease;
@@ -517,6 +521,10 @@ a {
     display: none;
   }
 
+  .mobile-contact {
+    display: inline-flex;
+  }
+
   .pillar-row {
     grid-template-columns: 2.5rem 1fr auto;
     gap: 1rem;
@@ -546,6 +554,10 @@ a {
 
   .language-toggle {
     padding-inline: 0.62rem;
+  }
+
+  .mobile-contact {
+    display: none;
   }
 
   .hero-title {
