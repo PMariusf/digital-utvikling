@@ -11,13 +11,14 @@
   --border: rgba(255, 255, 255, 0.1);
   --muted: rgba(255, 255, 255, 0.5);
   --muted-strong: rgba(255, 255, 255, 0.66);
-  --accent: #79f2c0;
-  --accent-hover: #a6f8d8;
-  --button-text: #06110d;
+  --accent: #ffc70b;
+  --accent-text: #ffc70b;
+  --accent-hover: #ffd84a;
+  --button-text: #17130a;
   --grid-line: rgba(255, 255, 255, 0.045);
-  --accent-glow: rgba(121, 242, 192, 0.16);
+  --accent-glow: rgba(255, 199, 11, 0.18);
   --blue-glow: rgba(70, 96, 255, 0.12);
-  --selection-text: #07110d;
+  --selection-text: #17130a;
 }
 
 :root[data-theme="light"] {
@@ -30,19 +31,20 @@
   --border: rgba(17, 23, 20, 0.11);
   --muted: rgba(17, 23, 20, 0.54);
   --muted-strong: rgba(17, 23, 20, 0.68);
-  --accent: #087653;
-  --accent-hover: #075f44;
-  --button-text: #ffffff;
+  --accent: #ffc70b;
+  --accent-text: #765800;
+  --accent-hover: #e9ad00;
+  --button-text: #17130a;
   --grid-line: rgba(17, 23, 20, 0.055);
-  --accent-glow: rgba(8, 118, 83, 0.12);
+  --accent-glow: rgba(255, 199, 11, 0.14);
   --blue-glow: rgba(59, 92, 180, 0.08);
-  --selection-text: #ffffff;
+  --selection-text: #17130a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
+  --color-accent: var(--accent-text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -168,7 +170,7 @@ a {
 }
 
 .language-toggle .is-active {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .toggle-divider {
@@ -357,7 +359,7 @@ a {
 }
 
 .section-kicker {
-  color: var(--accent);
+  color: var(--accent-text);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -401,7 +403,7 @@ a {
 }
 
 .pillar-number {
-  color: var(--accent);
+  color: var(--accent-text);
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.75rem;
 }
@@ -432,7 +434,7 @@ a {
 
 .pillar-row:hover .pillar-arrow {
   transform: translate(0.2rem, -0.2rem);
-  color: var(--accent);
+  color: var(--accent-text);
   opacity: 1;
 }
 
@@ -475,7 +477,7 @@ a {
   justify-content: center;
   border: 1px solid var(--border);
   border-radius: 999px;
-  color: var(--accent);
+  color: var(--accent-text);
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.72rem;
 }
