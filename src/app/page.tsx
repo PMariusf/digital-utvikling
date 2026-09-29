@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const pillars = [
   {
     number: "01",
@@ -54,14 +56,15 @@ export default function Home() {
 
       <header className="site-header">
         <div className="site-container flex h-20 items-center justify-between gap-8">
-          <a href="#" className="brand" aria-label="Digital Utvikling – forsiden">
-            <span className="brand-mark" aria-hidden="true" />
-            <span>
-              DIGITAL
-              <span className="block text-[0.62rem] font-medium tracking-[0.32em] text-white/45">
-                UTVIKLING
-              </span>
-            </span>
+          <a href="#" className="brand-logo" aria-label="Varegg Media – forsiden">
+            <Image
+              src="/ghimg.png"
+              alt="Varegg Media"
+              fill
+              sizes="180px"
+              className="object-contain object-left"
+              priority
+            />
           </a>
 
           <nav aria-label="Hovedmeny" className="hidden items-center gap-8 text-sm text-white/65 md:flex">
