@@ -207,9 +207,9 @@ export default function Home() {
                 Har du en idé?
                 <span className="block text-accent">La oss bygge den.</span>
               </h2>
-              <a className="button whitespace-nowrap" href="mailto:hei@digitalutvikling.no">
-                Start en samtale
-              </a>
+              <p className="max-w-sm text-sm leading-6 text-white/45 lg:text-right">
+                Kontaktinformasjon og skjema kobles på når vi har bestemt hvordan henvendelser skal håndteres.
+              </p>
             </div>
           </div>
         </section>
